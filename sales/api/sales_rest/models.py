@@ -16,12 +16,12 @@ class Customer(models.Model):
 
 
 class AutomobileVO(models.Model):
-    href = models.CharField(max_length=300, unique=True)
+    href = models.CharField(max_length=300, unique=True, null=True)
     vin = models.CharField(max_length=17, unique=True)
+    name = models.CharField(max_length=50)
     manufacturer = models.CharField(max_length=200)
-    color = models.CharField(max_length=50)
     year = models.PositiveSmallIntegerField()
-    model = models.CharField(max_length=50)
+    picture_url = models.URLField(max_length=200, null=True)
 
     def __str__(self):
         return self.name

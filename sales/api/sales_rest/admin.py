@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Sale, Customer, Employee
+from .models import Sale, Customer, Employee, AutomobileVO
 
 
 
@@ -22,5 +22,12 @@ class CustomerAdmin(admin.ModelAdmin):
 class EmployeeAdmin(admin.ModelAdmin):
     list_display=(
         "name",
+        "id",
+    )
+
+
+@admin.register(AutomobileVO)
+class AutomobileVOAdmin(admin.ModelAdmin):
+    list_display=(
         "id",
     )

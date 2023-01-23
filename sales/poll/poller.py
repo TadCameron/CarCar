@@ -16,15 +16,15 @@ from sales_rest.models import AutomobileVO
 def get_automobiles():
     response = requests.get("http://inventory-api:8000/api/automobiles/")
     content = json.loads(response.content)
-    for car in content["automobiles"]:
+    for car in content["autos"]:
         AutomobileVO.objects.update_or_create(
             href=car["href"],
             defaults={
                 "vin": car["vin"],
-                "name": car["model.name"],
-                "make": car["model.manufacturer"],
+                "name": car["model"]["name"],
+                "manufacturer": car["model"]["manufacturer"]["name"],
                 "year": car["year"],
-                "picture_url": car["model.picture_url"]
+                "picture_url": car["model"]["picture_url"],
                 },
         )
 
