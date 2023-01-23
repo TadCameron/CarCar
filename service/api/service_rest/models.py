@@ -7,13 +7,12 @@ class AutomobileVO(models.Model):
 
     name = models.CharField(max_length=100)
     make = models.CharField(max_length=100)
-    model = models.CharField(max_length=100)
     year = models.PositiveSmallIntegerField(null = True)
     picture_url = models.URLField()
 
 
 class Technician(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, null = True)
 
 class Appointment(models.Model):
     vin = models.CharField(max_length=17, unique=True)

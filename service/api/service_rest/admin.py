@@ -14,7 +14,7 @@ class AutoMobileVOAdmin(admin.ModelAdmin):
 @admin.register(Appointment)
 class AppointmentAdmin(admin.ModelAdmin):
     list_display = (
-        "name",
+        "customer_name",
         "date",
         "time",
         "status",
