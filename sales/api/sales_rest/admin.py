@@ -2,7 +2,6 @@ from django.contrib import admin
 from .models import Sale, Customer, Employee, AutomobileVO
 
 
-
 @admin.register(Sale)
 class SaleAdmin(admin.ModelAdmin):
     list_display=(
