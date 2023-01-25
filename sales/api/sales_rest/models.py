@@ -3,7 +3,7 @@ from django.db import models
 
 class Employee(models.Model):
     name = models.CharField(max_length=100)
-    employee_number = models.SmallIntegerField(max_length=10)
+    employee_number = models.SmallIntegerField(null=True)
 
     def __str__(self):
         return self.name
@@ -11,8 +11,8 @@ class Employee(models.Model):
 
 class Customer(models.Model):
     name = models.CharField(max_length=100)
-    address = models.CharField(max_length=100)
-    phone_number = models.SmallIntegerField(max_length=10)
+    address = models.CharField(max_length=100, null=True)
+    phone_number = models.CharField(max_length=10, null=True)
 
     def __str__(self):
         return self.name
@@ -36,6 +36,7 @@ class Sale(models.Model):
         related_name="sales",
         on_delete=models.CASCADE,
     )
+    price = models.IntegerField(null=True)
     customer = models.ForeignKey(
         Customer,
         related_name="sales",

@@ -60,4 +60,6 @@ class CustomerListEncoder(ModelEncoder):
     properties = [
         "id",
         "name",
+        "address",
+        "phone_number"
     ]
