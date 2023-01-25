@@ -17,9 +17,8 @@ class Technician(models.Model):
 class Appointment(models.Model):
     vin = models.CharField(max_length=17, unique=True)
     customer_name = models.CharField(max_length=100)
-    date = models.DateField(null = True)
-    time = models.TimeField(null = True)
-
+    datetime = models.DateTimeField(null = True)
+    
     status = models.BooleanField(default=False)
     
     technician = models.ForeignKey(Technician, null = True, default=None, on_delete=models.CASCADE)

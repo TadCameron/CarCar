@@ -15,8 +15,7 @@ class AutoMobileVOAdmin(admin.ModelAdmin):
 class AppointmentAdmin(admin.ModelAdmin):
     list_display = (
         "customer_name",
-        "date",
-        "time",
+        "datetime",
         "status",
         "id",
     )
