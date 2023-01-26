@@ -36,7 +36,7 @@ class Sale(models.Model):
         related_name="sales",
         on_delete=models.CASCADE,
     )
-    price = models.IntegerField(null=True)
+    sales_price = models.IntegerField(null=True)
     customer = models.ForeignKey(
         Customer,
         related_name="sales",

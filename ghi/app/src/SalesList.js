@@ -21,16 +21,22 @@ function SalesList() {
     <table className="table table-striped">
       <thead>
         <tr>
-          <th>Sales</th>
+          <th>SalesPerson</th>
+          <th>Client</th>
+          <th>Car</th>
+          <th>Final Price</th>
         </tr>
       </thead>
       <tbody>
         {sales.map(sale => {
           return (
             <tr key={sale.id}>
-              <td>{ sale.model_name }</td>
+              <td>{ sale.employee.name }</td>
+              <td>{ sale.customer.name }</td>
+              <td>{ sale.automobile.name }</td>
+              <td>{ sale.price }</td>
             </tr>
-          );
+          )
         })}
       </tbody>
     </table>

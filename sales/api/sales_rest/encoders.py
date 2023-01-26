@@ -49,6 +49,7 @@ class SaleDetailEncoder(ModelEncoder):
         "employee",
         "customer",
         "automobile",
+        "sales_price",
     ]
     encoders = {"employee": EmployeeListEncoder(),
                 "customer": CustomerListEncoder(),

@@ -186,7 +186,7 @@ def api_list_sales(request):
         sales = Sale.objects.all()
         return JsonResponse(
             {"sales": sales},
-            encoder=SaleListEncoder,
+            encoder=SaleDetailEncoder,
         )
     else:
         # because all of these are foreign keys, we need to assign the attribute to the
