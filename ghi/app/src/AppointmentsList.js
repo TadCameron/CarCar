@@ -14,7 +14,7 @@ function AppointmentsList(){
         const response = await fetch(`http://localhost:8080/api/service/is_vip/${vin}/`)
         if(response.ok){
             const vip_data = await response.json()
-            console.log(vip_data.vip)
+            //console.log(vip_data.vip)
             return(vip_data.vip)
         }
     }

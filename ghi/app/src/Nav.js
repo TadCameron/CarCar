@@ -19,6 +19,9 @@ function Nav() {
             <li className="nav-item">
               <NavLink className="nav-link active" aria-current="page" to="/services-manager">Services Manager</NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink className="nav-link active" aria-current="page" to="/autos-manager">Autos Manager</NavLink>
+            </li>
           </ul>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import AutomobilesManagerPage from './AutomobilesManagerPage';
 import MainPage from './MainPage';
 import Nav from './Nav';
 import ServicesManager from './ServicesManager';
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" element={<MainPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/services-manager" element={<ServicesManager />} />
+          <Route path="/autos-manager" element={<AutomobilesManagerPage />} />
         </Routes>
       </div>
     </BrowserRouter>
