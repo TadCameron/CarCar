@@ -6,6 +6,11 @@ import RecordSaleForm from './RecordSaleForm';
 import CreateCustomerForm from './CreateCustomer';
 import CreateEmployeeForm from './CreateEmployee';
 import EmployeeRecord from './EmployeeRecord';
+import ManufacturerList from './ManufacturerList';
+import CreateManufacturerForm from './CreateManufacturer';
+import VehicleModelsList from './VehicleModelList';
+
+
 
 function App() {
   return (
@@ -19,6 +24,9 @@ function App() {
           <Route path="/create_customer" element={<CreateCustomerForm />} />
           <Route path="/create_employee" element={<CreateEmployeeForm />} />
           <Route path="/track_records" element={<EmployeeRecord />} />
+          <Route path="/manufacturers" element={<ManufacturerList />} />
+          <Route path="/create_manufacturers" element={<CreateManufacturerForm />} />
+          <Route path="/vehicle_models" element={<VehicleModelsList />} />
         </Routes>
       </div>
     </BrowserRouter>

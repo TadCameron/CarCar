@@ -8,20 +8,7 @@ function CreateCustomerForm() {
         phone_number: ''
     })
 
-    // const getData = async () => {
-    //     const url = 'http://localhost:8090/api/potential_customers/'
-    //     const response = await fetch(url)
-
-    //     if (response.ok) {
-    //         const data = await response.json()
-    //         setCustomer(data.customers)
-
-    //     }
-    // }
-    // useEffect(() => {
-    //     getData()
-    // }, [])
-
+    
     const handleSubmit = async (e) => {
         e.preventDefault()
         const url = 'http://localhost:8090/api/customers/'
