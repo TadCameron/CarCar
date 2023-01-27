@@ -1,12 +1,12 @@
-import React from 'react';
-import AppointmentsList from './AppointmentsList';
+import React from "react";
+import AppointmentsList from "./AppointmentsList";
 
-function ServicesManager(){
-    return (
-        <React.StrictMode>
-            <AppointmentsList />
-        </React.StrictMode>
-    )
+function ServicesManager() {
+  return (
+    <React.StrictMode>
+      <AppointmentsList />
+    </React.StrictMode>
+  );
 }
 
-export default ServicesManager
+export default ServicesManager;

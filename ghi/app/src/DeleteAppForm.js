@@ -15,7 +15,6 @@ function DeleteAppForm(props){
         const response = await fetch(url, fetchConfig);
         if (response.ok) {
             const deleteApp = await response.json();
-            console.log(deleteApp)
         }
         props.updater()
     }

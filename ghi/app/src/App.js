@@ -1,9 +1,9 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import AutomobilesManagerPage from './AutomobilesManagerPage';
-import MainPage from './MainPage';
-import Nav from './Nav';
-import ServicesManager from './ServicesManager';
-import ServicesPage from './ServicesPage';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AutomobilesManagerPage from "./AutomobilesManagerPage";
+import MainPage from "./MainPage";
+import Nav from "./Nav";
+import ServicesManager from "./ServicesManager";
+import ServicesPage from "./ServicesPage";
 
 function App() {
   return (

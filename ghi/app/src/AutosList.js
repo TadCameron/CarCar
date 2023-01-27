@@ -1,5 +1,7 @@
 import React, { useCallback } from 'react';
 import { useEffect, useState } from 'react';
+import CreateAutosForm from './CreateAutosForm';
+import CreateModelForm from './CreateModelForm';
 
 function AutosList(){
     const [autos, setAutos] = useState([])
@@ -18,7 +20,11 @@ function AutosList(){
         fetchData();
     }, []);
 
-    return(
+    return([
+        <React.StrictMode>
+            <CreateModelForm updater={fetchData}/>
+            <CreateAutosForm updater={fetchData} />
+        </React.StrictMode>,
         <table key="a-1">
             <thead key="a-2">
                 <tr key="a-3">
@@ -50,6 +56,7 @@ function AutosList(){
                 }
             </tbody>
         </table>
-    )
+    ])
 }
+
 export default AutosList
