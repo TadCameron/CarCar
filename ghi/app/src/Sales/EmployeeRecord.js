@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 
 function EmployeeRecord() {
     const [filterValue, setFilterValue] = useState("");
@@ -13,7 +13,7 @@ function EmployeeRecord() {
             setSales(data.sales);
         }
     }
-    useEffect (() => {
+    useEffect(() => {
         getData()
     }, [])
 
@@ -24,33 +24,33 @@ function EmployeeRecord() {
     const filteredPerson = () => {
         return sales.filter((sale) =>
             sale.employee.name.toLowerCase().includes(filterValue)
-            );
+        );
     }
 
     return (
         <>
-        <h1> Salesperson Sales History </h1>
-        <input onChange={handleChange} placeholder="Search name" />
+            <h1> Salesperson Sales History </h1>
+            <input onChange={handleChange} placeholder="Search name" />
             <table className="table table-striped">
                 <thead>
-                <tr>
-                    <th>Salesperson</th>
-                    <th>Customer name</th>
-                    <th>Vin</th>
-                    <th>Sales price</th>
-                </tr>
+                    <tr>
+                        <th>Salesperson</th>
+                        <th>Customer name</th>
+                        <th>Vin</th>
+                        <th>Sales price</th>
+                    </tr>
                 </thead>
                 <tbody>
                     {filteredPerson().map((sale) => {
                         return (
-                        <tr>
-                            <td>{sale.employee.name }</td>
-                            <td>{sale.customer.name}</td>
-                            <td>{sale.automobile.vin}</td>
-                            <td>{sale.sales_price}</td>
-                        </tr>
-                    )
-                })}
+                            <tr>
+                                <td>{sale.employee.name}</td>
+                                <td>{sale.customer.name}</td>
+                                <td>{sale.automobile.vin}</td>
+                                <td>{sale.sales_price}</td>
+                            </tr>
+                        )
+                    })}
                 </tbody>
             </table>
         </>

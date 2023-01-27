@@ -13,7 +13,7 @@ function ManufacturerList() {
   }
 
 
-  useEffect(()=>{
+  useEffect(() => {
     getData()
   }, [])
 
@@ -28,7 +28,7 @@ function ManufacturerList() {
         {manufacturers.map(manufacturer => {
           return (
             <tr key={manufacturer.id}>
-              <td>{ manufacturer.name }</td>
+              <td>{manufacturer.name}</td>
             </tr>
           )
         })}
@@ -36,6 +36,5 @@ function ManufacturerList() {
     </table>
   );
 }
-
 
 export default ManufacturerList;

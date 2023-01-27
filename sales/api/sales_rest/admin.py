@@ -4,22 +4,17 @@ from .models import Sale, Customer, Employee, AutomobileVO
 
 @admin.register(Sale)
 class SaleAdmin(admin.ModelAdmin):
-    list_display=(
-        "employee",
-        "id",
-        "customer"
-    )
+    list_display = ("employee", "id", "customer")
+
 
 @admin.register(Customer)
 class CustomerAdmin(admin.ModelAdmin):
-    list_display=(
-        "name",
-        "id"
-    )
+    list_display = ("name", "id")
+
 
 @admin.register(Employee)
 class EmployeeAdmin(admin.ModelAdmin):
-    list_display=(
+    list_display = (
         "name",
         "id",
     )
@@ -27,6 +22,4 @@ class EmployeeAdmin(admin.ModelAdmin):
 
 @admin.register(AutomobileVO)
 class AutomobileVOAdmin(admin.ModelAdmin):
-    list_display=(
-        "id",
-    )
+    list_display = ("id",)

@@ -12,8 +12,7 @@ function SalesList() {
     }
   }
 
-
-  useEffect(()=>{
+  useEffect(() => {
     getData()
   }, [])
 
@@ -31,10 +30,10 @@ function SalesList() {
         {sales.map(sale => {
           return (
             <tr key={sale.id}>
-              <td>{ sale.employee.name }</td>
-              <td>{ sale.customer.name }</td>
-              <td>{ sale.automobile.name }</td>
-              <td>{ sale.price }</td>
+              <td>{sale.employee.name}</td>
+              <td>{sale.customer.name}</td>
+              <td>{sale.automobile.name}</td>
+              <td>{sale.price}</td>
             </tr>
           )
         })}

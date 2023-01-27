@@ -38,9 +38,11 @@ class SaleListEncoder(ModelEncoder):
         "employee",
         "customer",
     ]
-    encoders = {"employee": EmployeeListEncoder(),
-                "customer": CustomerListEncoder(),
-                }
+    encoders = {
+        "employee": EmployeeListEncoder(),
+        "customer": CustomerListEncoder(),
+    }
+
 
 class SaleDetailEncoder(ModelEncoder):
     model = Sale
@@ -51,16 +53,13 @@ class SaleDetailEncoder(ModelEncoder):
         "automobile",
         "sales_price",
     ]
-    encoders = {"employee": EmployeeListEncoder(),
-                "customer": CustomerListEncoder(),
-                "automobile": AutomobileVOListEncoder()
-                }
+    encoders = {
+        "employee": EmployeeListEncoder(),
+        "customer": CustomerListEncoder(),
+        "automobile": AutomobileVOListEncoder(),
+    }
+
 
 class CustomerListEncoder(ModelEncoder):
     model = Customer
-    properties = [
-        "id",
-        "name",
-        "address",
-        "phone_number"
-    ]
+    properties = ["id", "name", "address", "phone_number"]

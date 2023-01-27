@@ -12,8 +12,7 @@ function VehicleModelsList() {
     }
   }
 
-
-  useEffect(()=>{
+  useEffect(() => {
     getData()
   }, [])
 
@@ -29,8 +28,8 @@ function VehicleModelsList() {
         {models.map(model => {
           return (
             <tr key={model.id}>
-              <td>{ model.name }</td>
-              <td>{ model.manufacturer.name }</td>
+              <td>{model.name}</td>
+              <td>{model.manufacturer.name}</td>
             </tr>
           )
         })}
@@ -38,6 +37,5 @@ function VehicleModelsList() {
     </table>
   );
 }
-
 
 export default VehicleModelsList;

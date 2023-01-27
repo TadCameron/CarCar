@@ -17,7 +17,7 @@ class Customer(models.Model):
     def __str__(self):
         return self.name
 
- 
+
 class AutomobileVO(models.Model):
     href = models.CharField(max_length=300, unique=True, null=True)
     vin = models.CharField(max_length=17, unique=True)

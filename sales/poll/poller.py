@@ -9,9 +9,8 @@ sys.path.append("")
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "sales_project.settings")
 django.setup()
 
-# Import models from sales_rest, here.
 from sales_rest.models import AutomobileVO
-# from sales_rest.models import Something
+
 
 def get_automobiles():
     response = requests.get("http://inventory-api:8000/api/automobiles/")
@@ -25,8 +24,9 @@ def get_automobiles():
                 "manufacturer": car["model"]["manufacturer"]["name"],
                 "year": car["year"],
                 "picture_url": car["model"]["picture_url"],
-                },
+            },
         )
+
 
 def poll():
     while True:
