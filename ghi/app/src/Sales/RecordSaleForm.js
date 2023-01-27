@@ -70,7 +70,7 @@ function RecordSaleForm() {
         <div className="row">
             <div className="offset-3 col-6">
                 <div className="shadow p-4 mt-4">
-                    <h1>Record a Sale, Alpha-Male</h1>
+                    <h1>Record a Sale</h1>
                     <form onSubmit={handleSubmit} id="create-sales-form">
                         <div className="form-floating mb-3">
                             <select value={formData.automobile} onChange={handleFormChange} required name="automobile" id="automobile" className="form-select">

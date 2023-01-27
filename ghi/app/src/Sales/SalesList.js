@@ -24,6 +24,7 @@ function SalesList() {
           <th>Client</th>
           <th>Car</th>
           <th>Final Price</th>
+          <th>Sale Id</th>
         </tr>
       </thead>
       <tbody>
@@ -33,7 +34,8 @@ function SalesList() {
               <td>{sale.employee.name}</td>
               <td>{sale.customer.name}</td>
               <td>{sale.automobile.name}</td>
-              <td>{sale.price}</td>
+              <td>{sale.sales_price}</td>
+              <td>{sale.id}</td>
             </tr>
           )
         })}
@@ -41,6 +43,5 @@ function SalesList() {
     </table>
   );
 }
-
 
 export default SalesList;
