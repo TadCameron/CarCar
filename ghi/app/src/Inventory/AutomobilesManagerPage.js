@@ -1,5 +1,6 @@
 import React from "react";
 import AutosList from "./AutosList";
+import CreateAutosForm from "./CreateAutosForm";
 
 function AutomobilesManagerPage() {
   return (
