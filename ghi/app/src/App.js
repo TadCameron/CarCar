@@ -12,6 +12,7 @@ import VehicleModelsList from './Inventory/VehicleModelList';
 import AutomobilesManagerPage from "./Inventory/AutomobilesManagerPage";
 import ServicesManager from "./Service/ServicesManager";
 import ServicesPage from "./Service/ServicesPage";
+import DeleteSaleForm from './Sales/DeleteSaleForm copy';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/" element={<MainPage />} />
           <Route path="/sales" element={<SalesList />} />
           <Route path="/record" element={<RecordSaleForm />} />
+          <Route path="/delete_sale" element={<DeleteSaleForm />} />
           <Route path="/create_customer" element={<CreateCustomerForm />} />
           <Route path="/create_employee" element={<CreateEmployeeForm />} />
           <Route path="/track_records" element={<EmployeeRecord />} />
