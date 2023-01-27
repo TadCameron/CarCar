@@ -3,30 +3,10 @@ from .models import *
 from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
 import json
-from common.json import ModelEncoder, DateEncoder
-# Create your views here.
+from .encoders import *
 
-class TechnicianEncoder(ModelEncoder):
-    model = Technician
-    properties = {
-        "id",
-        "name",
-    }
 
-class AppointmentEncoder(ModelEncoder):
-    model = Appointment
-    properties = [
-        "id",
-        "vin",
-        "customer_name",
-        "datetime",
-        "status",
-        "technician",
-    ]
-    encoders = {
-        "technician": TechnicianEncoder(),
-        #"datetime": DateEncoder(),
-    }
+
 @require_http_methods(["GET"])
 def api_is_vip(request, vin):
     auto = AutomobileVO.objects.filter(vin=vin)
@@ -73,7 +53,7 @@ def api_appointments(request):
         content["technician"] = techy
 
         appointment = Appointment.objects.create(**content)
-        #print(appointment)
+        
         return JsonResponse(
             appointment,
             encoder=AppointmentEncoder,
