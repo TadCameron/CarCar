@@ -69,7 +69,8 @@ function CreateAppointmentForm(){
         };
         const response = await fetch(url, fetchConfig)
         if (response.ok){
-            const createdApp = await response.json()      
+            const createdApp = await response.json()   
+            event.target.reset()   
         }
     }
 

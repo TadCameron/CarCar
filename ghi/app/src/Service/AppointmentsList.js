@@ -10,6 +10,9 @@ function AppointmentsList() {
   const [vipRef, setVipRef] = useState({});
   const [curForm, setCurForm] = useState(0);
   const [filton, setFilter] = useState("");
+  const [btn_symbol, setSymbol] = useState("+");
+  const [display, setDisplay] = useState([]);
+  const [init, setInit] = useState(true);
 
   async function is_vip(vin) {
     const response = await fetch(
@@ -20,7 +23,6 @@ function AppointmentsList() {
       return vip_data.vip;
     }
   }
-
   const fetchData = async () => {
     const url = "http://localhost:8080/api/service/appointments/";
     const response = await fetch(url);
@@ -28,20 +30,22 @@ function AppointmentsList() {
     if (response.ok) {
       const data = await response.json();
       setApps(data.appointments);
-      apps.forEach((app) => {
-        const init = { [app.id]: false };
-        setShowForms((showForms) => ({
-          ...showForms,
-          ...init,
-        }));
-      });
-
       setCurForm(data.appointments[0].id);
+      setInit(true);
     }
   };
-
   useEffect(() => {
     fetchData();
+  }, []);
+
+  if (init) {
+    apps.forEach((app) => {
+      const init = { [app.id]: false };
+      setShowForms((showForms) => ({
+        ...showForms,
+        ...init,
+      }));
+    });
     apps.forEach(async (app) => {
       const vip_status = await is_vip(app.vin);
       const init = { [app.id]: vip_status };
@@ -50,7 +54,8 @@ function AppointmentsList() {
         ...init,
       }));
     });
-  }, []);
+    setInit(false);
+  }
 
   const handlePlusClick = useCallback(
     (event) => {
@@ -74,30 +79,53 @@ function AppointmentsList() {
     setFilter(val);
   }, []);
 
+  const handleClick = useCallback(
+    (event) => {
+      if (btn_symbol === "+") {
+        setSymbol("-");
+        setDisplay([
+          <React.StrictMode>
+            <CreateTechnicianForm updater={fetchData} />
+          </React.StrictMode>,
+        ]);
+      } else {
+        setSymbol("+");
+        setDisplay([<div></div>]);
+      }
+    },
+    [btn_symbol]
+  );
+
   return [
     [
-      <React.StrictMode>
-        <CreateTechnicianForm updater={fetchData} />
-      </React.StrictMode>,
+      <div className="row align-content-center">
+        <div className="col-1 m-4 mt-4" style={{ margin: "0%", width: "4%" }}>
+          <div onClick={handleClick} className="btn btn-primary">
+            {btn_symbol}
+          </div>
+        </div>
+        {display}
+      </div>,
     ],
-    <div className="row rounded-pill shadow">
+    <div className="row rounded-pill shadow p-2" style={{ width: "50%" }}>
       <input
         onChange={handleFilterChange}
-        className="col-6 rounded-pill"
+        className="col rounded-pill"
         placeholder="Search"
       ></input>
     </div>,
-    <table key="boobah">
+    <table key="boobah" className="mt-4 table">
       <thead key="boobah2">
         <tr key="boobah4">
-          <th>VIP?</th>
-          <th>Customer Name</th>
-          <th>Vin</th>
-          <th>Time</th>
-          <th>Status</th>
-          <th>Technician</th>
-          <th></th>
-          <th></th>
+          <th key="th-1">VIP?</th>
+          <th key="th-2">Customer Name</th>
+          <th key="th-3">Vin</th>
+          <th key="th-4">Time</th>
+          <th key="th-5">Status</th>
+          <th key="th-6">Technician</th>
+          <th key="th-7"></th>
+          <th key="th-8"></th>
+          <th key="th-9"></th>
         </tr>
       </thead>
       <tbody key="boobah3">
@@ -115,7 +143,11 @@ function AppointmentsList() {
                 </React.StrictMode>,
               ];
               updateB = [
-                <button value={app.id} onClick={handleUpdateClick}>
+                <button
+                  className="btn btn-primary rounded-3"
+                  value={app.id}
+                  onClick={handleUpdateClick}
+                >
                   Update
                 </button>,
               ];
@@ -125,19 +157,28 @@ function AppointmentsList() {
 
             return [
               <tr key={i}>
-                <td>{vipRef[app.id]}</td>
-                <td>{app.customer_name}</td>
-                <td>{app.vin}</td>
-                <td>{app.datetime}</td>
-                <td>{`${app.status}`}</td>
-                <td>{app.technician.name}</td>
-                <td>
-                  <button value={app.id} onClick={handlePlusClick}>
+                <td key={`${i}:col-1`}>{vipRef[app.id]}</td>
+                <td key={`${i}:col-2`}>{app.customer_name}</td>
+                <td key={`${i}:col-3`}>{app.vin}</td>
+                <td key={`${i}:col-4`}>{app.datetime}</td>
+                <td key={`${i}:col-5`}>{`${app.status}`}</td>
+                <td key={`${i}:col-6`}>{app.technician.name}</td>
+                <td key={`${i}:col-7`}>
+                  <button
+                    key={`${i}:button`}
+                    className="btn btn-primary rounded-pill"
+                    value={app.id}
+                    onClick={handlePlusClick}
+                  >
                     {symbol}
                   </button>
                 </td>
-                <td>{[deleteB]}</td>
-                <td>{[updateB]}</td>
+                <td key={`${i}:col-8`} style={{ margin: "0%", width: "8%" }}>
+                  {[deleteB]}
+                </td>
+                <td key={`${i}:col-9`} style={{ margin: "0%", width: "8%" }}>
+                  {[updateB]}
+                </td>
               </tr>,
             ];
           })}
