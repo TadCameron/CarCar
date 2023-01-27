@@ -9,7 +9,9 @@ import EmployeeRecord from './Sales/EmployeeRecord';
 import ManufacturerList from './Inventory/ManufacturerList';
 import CreateManufacturerForm from './Inventory/CreateManufacturer';
 import VehicleModelsList from './Inventory/VehicleModelList';
-
+import AutomobilesManagerPage from "./AutomobilesManagerPage";
+import ServicesManager from "./ServicesManager";
+import ServicesPage from "./ServicesPage";
 
 function App() {
   return (
@@ -26,6 +28,9 @@ function App() {
           <Route path="/manufacturers" element={<ManufacturerList />} />
           <Route path="/create_manufacturers" element={<CreateManufacturerForm />} />
           <Route path="/vehicle_models" element={<VehicleModelsList />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/services-manager" element={<ServicesManager />} />
+          <Route path="/autos-manager" element={<AutomobilesManagerPage />} />
         </Routes>
       </div>
     </BrowserRouter>
