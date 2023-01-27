@@ -56,6 +56,7 @@ function EmployeeRecord() {
         </>
     )
 }
+
 export default EmployeeRecord;
 
 

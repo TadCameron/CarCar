@@ -32,7 +32,7 @@ function AutosList(){
                     <th>Model</th>
                     <th>Make</th>
                     <th>Year</th>
-                    <th>Color</th>  
+                    <th>Color</th>
                     <th>VIN</th>
                 </tr>
             </thead>

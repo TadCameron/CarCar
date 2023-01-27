@@ -9,9 +9,9 @@ import EmployeeRecord from './Sales/EmployeeRecord';
 import ManufacturerList from './Inventory/ManufacturerList';
 import CreateManufacturerForm from './Inventory/CreateManufacturer';
 import VehicleModelsList from './Inventory/VehicleModelList';
-import AutomobilesManagerPage from "./AutomobilesManagerPage";
-import ServicesManager from "./ServicesManager";
-import ServicesPage from "./ServicesPage";
+import AutomobilesManagerPage from "./Inventory/AutomobilesManagerPage";
+import ServicesManager from "./Service/ServicesManager";
+import ServicesPage from "./Service/ServicesPage";
 
 function App() {
   return (
