@@ -20,7 +20,7 @@ function DeleteAppForm(props){
     }
 
     return (
-        <button className="btn text-light bg-danger rounded-3" onClick={handleSubmit}>Delete</button>  
+        <button className="btn bg-danger text-light rounded-3" onClick={handleSubmit}>Delete</button>  
     )
 }
 
