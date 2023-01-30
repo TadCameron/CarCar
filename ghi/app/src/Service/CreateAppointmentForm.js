@@ -16,14 +16,14 @@ function CreateAppointmentForm(){
         if (response.ok) {
             const data = await response.json()
             setTechies(data.technicians)
-            
+
         }
     }
     useEffect(() => {
         fetchData();
     }, []);
 
-    
+
 
     const handleFormChange = useCallback((event) => {
         async function is_vip(vin){
@@ -52,7 +52,7 @@ function CreateAppointmentForm(){
         const url = 'http://localhost:8080/api/service/appointments/'
         let data = {}
 
-        const datetime = `${form["date"]}:00+${form["time"]}` 
+        const datetime = `${form["date"]}:00+${form["time"]}`
         data["datetime"] = datetime
         data["status"] = false
         Object.keys(form).forEach((key)=>{
@@ -69,14 +69,16 @@ function CreateAppointmentForm(){
         };
         const response = await fetch(url, fetchConfig)
         if (response.ok){
-            const createdApp = await response.json()   
-            event.target.reset()   
+            const createdApp = await response.json()
+
+            event.target.reset()
         }
+
     }
 
     function is_vip(){
         if(isVip) return <h2>Welcome back vip!</h2>
-        return 
+        return
     }
 
     return (
