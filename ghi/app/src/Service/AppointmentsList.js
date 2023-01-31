@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import { useEffect, useState } from "react";
-import CreateTechnicianForm from "../CreateTechnicianForm";
-import DeleteAppForm from "../DeleteAppForm";
+import CreateTechnicianForm from "./CreateTechnicianForm";
+import DeleteAppForm from "./DeleteAppForm";
 import ModifyAppForm from "../ModifyAppForm";
 
 function AppointmentsList() {

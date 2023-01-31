@@ -1,5 +1,5 @@
 import React from "react";
-import CreateAppointmentForm from "../CreateAppointmentForm";
+import CreateAppointmentForm from "./CreateAppointmentForm";
 
 function ServicesPage() {
   return (
