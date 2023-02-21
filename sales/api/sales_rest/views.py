@@ -154,8 +154,6 @@ def api_list_sales(request):
             encoder=SaleDetailEncoder,
         )
     else:
-        # because all of these are foreign keys, we need to assign the attribute to the
-        # key we're trying to create, in this case the id.
         content = json.loads(request.body)
         customerid = content["customer"]
         customer = get_object_or_404(Customer, id=customerid)

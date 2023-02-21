@@ -43,11 +43,6 @@ function Nav() {
               </ul>
             </div>
               <li className="nav-item"><NavLink className="nav-link active" aria-current="page" to="/create_customer">Create a Customer</NavLink></li>
-
-
-
-
-
           </ul>
         </div>
       </div>
